@@ -22,7 +22,7 @@ public class UseController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<JwtResponseDTO> login(@RequestBody LoginUserRequestDTO dto) {
         return new ResponseEntity<>(userService.login(dto), HttpStatus.OK);
     }

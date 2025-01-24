@@ -2,12 +2,14 @@ package com.github.m4rciooliveira.autenticacaoautorizacaojwt.model;
 
 import com.github.m4rciooliveira.autenticacaoautorizacaojwt.model.enums.Role;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Set;
 import java.util.UUID;
 
 @Data
+@Builder
 @Entity
 @Table(name = "TB_USERS")
 public class User {

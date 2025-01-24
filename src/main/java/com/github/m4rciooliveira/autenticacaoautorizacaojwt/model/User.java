@@ -1,5 +1,6 @@
 package com.github.m4rciooliveira.autenticacaoautorizacaojwt.model;
 
+import com.github.m4rciooliveira.autenticacaoautorizacaojwt.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 

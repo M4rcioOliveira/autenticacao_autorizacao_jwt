@@ -2,13 +2,14 @@ package com.github.m4rciooliveira.autenticacaoautorizacaojwt.model;
 
 import com.github.m4rciooliveira.autenticacaoautorizacaojwt.model.enums.Role;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Set;
 import java.util.UUID;
 
-@Data
+@AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "TB_USERS")
@@ -21,10 +22,12 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
-    @ElementCollection(targetClass = Role.class)
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     private Set<Role> roles;
 
+    public User() {
+    }
 }

@@ -20,6 +20,6 @@ spring:
 
 keys:
   jwt:
-    secret: e3c36c42-5111-4d47-b4b9-96d9bdee5037
+    secret: ${JWT_SECRET}
 
 

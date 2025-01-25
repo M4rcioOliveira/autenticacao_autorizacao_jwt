@@ -1,25 +1,25 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: autenticacaoautorizacaojwt
-  server: 8080
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/mydatabase
     username: admin
     password: admin
-    hikari:
-      pool-name: H2 Pool
-      maximum-pool-size: 5
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
-    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
 
 keys:
   jwt:
-    secret:
+    secret: e3c36c42-5111-4d47-b4b9-96d9bdee5037
+
+
